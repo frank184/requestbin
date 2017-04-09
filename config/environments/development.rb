@@ -53,5 +53,12 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Devise Default Mailer URL Options
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'lvh.me', port: 3000 }
+
+  config.action_cable.url = 'wss://localhost:28080'
+  config.action_cable.allowed_request_origins = [ 'localhost', /localhost/  ]
+
+  # SMTP Settings
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

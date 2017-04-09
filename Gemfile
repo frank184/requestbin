@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise Authentication
 gem 'devise'
+
+# Sidekiq Queue adapter
+gem 'sidekiq'
