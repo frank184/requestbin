@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+class Dashboard::RequestsController < Dashboard::ApplicationController
   before_action :set_request, only: [:show, :destroy]
 
   # GET /requests
