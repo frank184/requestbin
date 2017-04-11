@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/drapergem/draper.git
+  revision: a1d854a7f4c996e1553919cf6669677ac75e2d96
+  specs:
+    draper (3.0.0.pre1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: dfbcc6a53653d8908007e26324a0f299f026ec4f
   specs:
@@ -91,12 +102,6 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    draper (3.0.0.pre1)
-      actionpack (~> 5.0)
-      activemodel (~> 5.0)
-      activemodel-serializers-xml (~> 1.0)
-      activesupport (~> 5.0)
-      request_store (~> 1.0)
     erubi (1.6.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -241,7 +246,7 @@ DEPENDENCIES
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
   devise
-  draper (= 3.0.0.pre1)
+  draper!
   font-awesome-sass
   jbuilder (~> 2.5)
   jquery-datatables-rails

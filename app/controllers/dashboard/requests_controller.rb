@@ -1,4 +1,5 @@
 class Dashboard::RequestsController < Dashboard::ApplicationController
+  before_action :authenticate_user!, unless: 'params[:bin_id].present?'
   before_action :set_request, only: [:show, :destroy]
 
   # GET /requests
@@ -17,21 +18,23 @@ class Dashboard::RequestsController < Dashboard::ApplicationController
   def create
     byebug
     req = Request.new(request)
+    redirect_to requests_url, notice: 'Request was successfully created.'
   end
 
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
     @request.destroy
-    respond_to do |format|
-      format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to requests_url, notice: 'Request was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
-      @request = Request.find(params[:id])
+      if user_signed_in?
+        @request = Request.find(params[:id])
+      else
+        @bin = Bin.find(params[:id])
+      end
     end
 end
