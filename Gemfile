@@ -68,3 +68,15 @@ gem 'devise'
 
 # Sidekiq Queue adapter
 gem 'sidekiq'
+
+
+# Back-end to Front-end libraries
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+
+gem 'sweetalert-rails'
+gem 'sweet-alert-confirm'
+
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
+gem 'draper', '3.0.0.pre1'

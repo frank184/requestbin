@@ -12,6 +12,13 @@ class Dashboard::RequestsController < Dashboard::ApplicationController
   def show
   end
 
+  # POST /requests
+  # POST /requests.json
+  def create
+    byebug
+    req = Request.new(request)
+  end
+
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
