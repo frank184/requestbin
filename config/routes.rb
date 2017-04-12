@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  constraints subdomain: /api/, path: '/' do
+    mount Requestbin::API => '/'
+  end
+
   constraints subdomain: /dashboard/ do
     scope module: :dashboard do
       devise_for :users,
@@ -29,5 +33,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # root to: redirect('/', subdomain: :dashboard, host: 'lvh.me')
+  root to: redirect('/', subdomain: :dashboard, host: 'lvh.me')
 end

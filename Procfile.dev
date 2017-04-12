@@ -1,6 +1,6 @@
-puma: bundle exec puma config.ru -p ${APP_PORT:-3000} -e ${RACK_ENV:-development}
-api: bundle exec puma api/v1/config.ru -p ${API_PORT:-3001} -e ${RACK_ENV:-development}
-cable: bundle exec puma cable/config.ru -p ${WS_PORT:-28080} -e ${RACK_ENV:-development}
+web: bundle exec puma rack/web.ru -p ${APP_PORT:-3000} -e ${RACK_ENV:-development}
+api: bundle exec puma rack/api.ru -p ${API_PORT:-3001} -e ${RACK_ENV:-development}
+cable: bundle exec puma rack/cable.ru -p ${WS_PORT:-28080} -e ${RACK_ENV:-development}
 log: tail -f log/${RACK_ENV:-development}.log
 worker: bundle exec sidekiq
 redis: redis-server
