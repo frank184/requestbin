@@ -1,5 +1,5 @@
 class Dashboard::RequestsController < Dashboard::ApplicationController
-  before_action :authenticate_user!, unless: 'params[:bin_id].present?'
+  before_action :authenticate_user!, unless: 'params[:bin_uuid].present?'
   before_action :set_request, only: [:show, :destroy]
 
   # GET /requests
@@ -16,7 +16,6 @@ class Dashboard::RequestsController < Dashboard::ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    byebug
     req = Request.new(request)
     redirect_to requests_url, notice: 'Request was successfully created.'
   end
@@ -34,7 +33,8 @@ class Dashboard::RequestsController < Dashboard::ApplicationController
       if user_signed_in?
         @request = Request.find(params[:id])
       else
-        @bin = Bin.find(params[:id])
+        @bin = Bin.find_by_uuid(params[:bin_uuid])
+        @request = @bin.requests.find(params[:id])
       end
     end
 end

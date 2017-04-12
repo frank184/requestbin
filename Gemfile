@@ -80,3 +80,7 @@ gem 'sweet-alert-confirm'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'draper', github: 'drapergem/draper'
+
+gem 'grape'
+gem 'hashie-forbidden_attributes'
+gem 'rack'
