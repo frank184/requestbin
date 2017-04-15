@@ -1,6 +1,5 @@
 class Dashboard::TokensController < Dashboard::ApplicationController
-  before_action :authenticate_user!, unless: 'params[:bin_uuid].present?'
-  before_action :set_request, only: [:show, :destroy]
+  before_action :authenticate_user!
 
   # GET /tokens
   def index
@@ -8,6 +7,7 @@ class Dashboard::TokensController < Dashboard::ApplicationController
 
   # PUT /tokens
   def update
-    
+    current_user.regenerate_token
+    redirect_to tokens_path
   end
 end

@@ -81,6 +81,12 @@ gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'draper', github: 'drapergem/draper'
 
+# grape API
 gem 'grape'
 gem 'hashie-forbidden_attributes'
-gem 'rack'
+gem 'grape-active_model_serializers'
+gem 'grape_on_rails_routes'
+gem 'grape-swagger'
+
+
+gem 'rack-cors', :require => 'rack/cors'

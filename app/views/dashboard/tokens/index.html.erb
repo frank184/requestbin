@@ -1,2 +1,14 @@
-<h1 class="page-header">API Access Token:</h1>
+<h1 class="page-header">
+  <div class="container-fluid header-container" >
+    <div class="row">
+      <div class="col-xs-8">
+        API Access Token
+      </div>
+      <div id="form" class="col-xs-4 text-right">
+        <%= link_to 'Refresh Token', tokens_path, method: :patch, class: 'btn btn-lg btn-default' %>
+      </div>
+    </div>
+  </div>
+</h1>
+
 <h3><%= current_user.token %></h3>

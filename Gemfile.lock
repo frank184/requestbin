@@ -45,6 +45,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.5)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
     activejob (5.1.0.rc1)
       activesupport (= 5.1.0.rc1)
       globalid (>= 0.3.6)
@@ -89,6 +94,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    case_transform (0.2)
+      activesupport
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     coercible (1.0.0)
@@ -128,6 +135,13 @@ GEM
       rack (>= 1.3.0)
       rack-accept
       virtus (>= 1.0.0)
+    grape-active_model_serializers (1.5.0)
+      active_model_serializers (>= 0.10.0)
+      grape (>= 0.8.0)
+    grape-swagger (0.27.0)
+      grape (>= 0.16.2)
+    grape_on_rails_routes (0.3.1)
+      rails (>= 3.1.1)
     hashie (3.5.5)
     hashie-forbidden_attributes (0.1.1)
       hashie (>= 3.0)
@@ -145,6 +159,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jsonapi-renderer (0.1.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -175,6 +190,7 @@ GEM
     rack (2.0.1)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-cors (0.4.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -285,6 +301,9 @@ DEPENDENCIES
   draper!
   font-awesome-sass
   grape
+  grape-active_model_serializers
+  grape-swagger
+  grape_on_rails_routes
   hashie-forbidden_attributes
   jbuilder (~> 2.5)
   jquery-datatables-rails
@@ -292,7 +311,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.7)
-  rack
+  rack-cors
   rails (~> 5.1.0.rc1)
   rails_12factor
   sass-rails!

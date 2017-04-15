@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 20170412012618) do
 
   create_table "bins", force: :cascade do |t|
-    t.string "uuid"
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "requests", force: :cascade do |t|
     t.string "headers"
-    t.string "body"
+    t.string "params"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "owner_type"
