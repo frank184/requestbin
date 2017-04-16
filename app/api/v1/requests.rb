@@ -1,9 +1,9 @@
 class V1::Requests < Grape::API
   include V1Base
   include AuthenticateRequest
-
+  
   get '/' do
-    {request: 'api'}
+    { request: Request.new }
   end
 
   post '/' do

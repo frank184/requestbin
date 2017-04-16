@@ -7,6 +7,10 @@ class Dashboard::RequestsController < Dashboard::ApplicationController
   # GET /requests
   # GET /requests.json
   def index
+    respond_to do |format|
+      format.json { render json:  Dashboard::RequestsDatatable.new(view_context, {collection: @requests}) }
+      format.html
+    end
   end
 
   # GET /requests/1

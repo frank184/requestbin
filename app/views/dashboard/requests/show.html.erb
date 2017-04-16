@@ -2,13 +2,12 @@
 
 <p>
   <strong>Headers:</strong>
-  <%= @request.headers %>
+  <%= content_for_hash @request.headers %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @request.body %>
+  <strong>Params:</strong>
+  <%= content_for_hash @request.params %>
 </p>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

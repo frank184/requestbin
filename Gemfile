@@ -87,6 +87,3 @@ gem 'hashie-forbidden_attributes'
 gem 'grape-active_model_serializers'
 gem 'grape_on_rails_routes'
 gem 'grape-swagger'
-
-
-gem 'rack-cors', :require => 'rack/cors'

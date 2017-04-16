@@ -11,7 +11,7 @@ module V1Base
   included do
     format :json
     default_format :json
-    formatter :json, Grape::Formatter::ActiveModelSerializers
+    # formatter :json, Grape::Formatter::ActiveModelSerializers
 
     version 'v1', using: :path
 
@@ -29,5 +29,5 @@ module V1Base
       end
     end
   end
-  
+
 end
