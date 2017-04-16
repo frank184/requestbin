@@ -3,5 +3,5 @@ mailcatcher: mailcatcher -f
 web:   bundle exec puma rack/web.ru -p ${APP_PORT:-3000} -e ${RACK_ENV:-development}
 api:   bundle exec puma rack/api.ru -p ${API_PORT:-3001} -e ${RACK_ENV:-development}
 cable: bundle exec puma rack/cable.ru -p ${WS_PORT:-28080} -e ${RACK_ENV:-development}
+log: touch log/${RACK_ENV:-development}.log && tail -f log/${RACK_ENV:-development}.log
 worker: bundle exec sidekiq
-log: tail -f log/${RACK_ENV:-development}.log
