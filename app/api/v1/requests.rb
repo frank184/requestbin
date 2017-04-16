@@ -1,7 +1,7 @@
 class V1::Requests < Grape::API
   include V1Base
   include AuthenticateRequest
-  
+
   get '/' do
     { request: Request.new }
   end
@@ -10,9 +10,9 @@ class V1::Requests < Grape::API
     req = Request.new(headers: headers.to_json, params: params.to_json, owner: current_user)
 
     if req.save
-      {request: req}
+      req
     else
-      {errors: req.errors}
+      req.errors
     end
   end
 
@@ -25,9 +25,9 @@ class V1::Requests < Grape::API
     req = Request.new(headers: headers, body: params, owner: bin)
 
     if req.save
-      {request: req}
+      req
     else
-      {errors: req.errors}
+      req.errors
     end
   end
 end

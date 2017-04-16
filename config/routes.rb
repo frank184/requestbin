@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  constraints subdomain: /api/, path: '/' do
+  constraints subdomain: /api/ do
     mount ApplicationApi => '/'
   end
 
