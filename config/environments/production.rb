@@ -88,4 +88,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Mount Action Cable outside main process or domain
+  # config.action_cable.mount_path = nil
+  config.action_cable.url = 'wss://frank-requestbin.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://frank-requestbin.herokuapp.com', /http:\/\/frank-requestbin.herokuapp.com.*/  ]
 end

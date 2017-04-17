@@ -13,3 +13,7 @@
  *= require dashboard/application
  *= require_self
  */
+
+body {
+  overflow-y: scroll;
+}

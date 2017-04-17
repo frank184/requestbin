@@ -55,7 +55,7 @@ Rails.application.configure do
   # Devise Default Mailer URL Options
   config.action_mailer.default_url_options = { host: 'lvh.me', port: 3000 }
 
-  config.action_cable.url = 'wss://localhost:28080'
+  config.action_cable.url = 'wss://localhost:3000'
   config.action_cable.allowed_request_origins = [ 'localhost', /localhost/  ]
 
   # SMTP Settings

@@ -20,6 +20,7 @@ module V1Base
     end
 
     rescue_from Exception do |e|
+      puts "#{e.class}: #{e.message}\n#{e.backtrace}"
       render_error(e.http_status, e.error.message, e.error.debug_info)
     end
 

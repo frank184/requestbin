@@ -1,17 +1,6 @@
-<h1 class="page-header">
-  <div class="container-fluid header-container" >
-    <div class="row">
-      <div class="col-xs-8" style="padding:0">
-        Requests
-      </div>
-      <div id="form" class="col-xs-4 text-right" style="padding:0">
-        <%= link_to 'API Token', tokens_path, class: 'btn btn-lg btn-default' %>
-      </div>
-    </div>
-  </div>
-</h1>
+<h1 class="page-header">Requests</h1>
 
-<table class="table table-responsive requests-datatable" data-ajax="<%= requests_path(format: :json) %>">
+<table id="requests-datatable" class="table table-responsive responsive no-wrap" data-ajax="<%= @bin.present? ? bin_requests_path(format: :json) : requests_path(format: :json) %>">
   <thead>
     <tr>
       <th>Headers</th>

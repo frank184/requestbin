@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  constraints subdomain: /cable/ do
+    mount ActionCable.server => '/'
+  end
+
   constraints subdomain: /api/ do
     mount ApplicationApi => '/'
   end

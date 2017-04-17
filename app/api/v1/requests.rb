@@ -20,9 +20,8 @@ class V1::Requests < Grape::API
     requires :token, type: String, desc: 'Bin token'
   end
   post '/:token' do
-    token = params[:token]
-    bin = Bin.find_by_token(token)
-    req = Request.new(headers: headers, body: params, owner: bin)
+    bin = Bin.find_by_token(params[:token])
+    req = Request.new(headers: headers.to_json, params: params.except(:token).to_json, owner: bin)
 
     if req.save
       req

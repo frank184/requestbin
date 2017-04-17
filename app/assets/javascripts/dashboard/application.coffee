@@ -16,6 +16,7 @@
 #= require turbolinks
 #= require dataTables/jquery.dataTables
 #= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+#= require dataTables/extras/dataTables.responsive
 #= require sweetalert
 #= require sweet-alert-confirm
 #= require_tree .
